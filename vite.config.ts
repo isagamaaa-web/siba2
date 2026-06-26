@@ -9,4 +9,7 @@ export default defineConfig({
     nitro(), 
     viteReact()
   ],
+  build: {
+    cssMinify: 'esbuild', // Tells Vite to bypass the LightningCSS bug
+  },
 });
