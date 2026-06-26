@@ -2,14 +2,16 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import { defineConfig } from 'vite';
 import viteReact from '@vitejs/plugin-react';
 import { nitro } from 'nitro/vite';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [
+    tailwindcss(), // Allows Vite to intercept and compile Tailwind v4
     tanstackStart(), 
     nitro(), 
     viteReact()
   ],
   build: {
-    cssMinify: 'esbuild', // Tells Vite to bypass the LightningCSS bug
+    cssMinify: 'esbuild',
   },
 });
